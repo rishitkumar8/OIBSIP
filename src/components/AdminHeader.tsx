@@ -1,5 +1,5 @@
 import { Link, useRouter } from "@tanstack/react-router";
-import { ChefHat, LogOut, LayoutDashboard, ClipboardList, Boxes } from "lucide-react";
+import { ChefHat, LogOut, ClipboardList, Boxes } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { Button } from "@/components/ui/button";
 
@@ -21,13 +21,16 @@ export function AdminHeader() {
           </span>
         </Link>
         <nav className="hidden items-center gap-6 md:flex">
-          <Link to="/admin" className="flex items-center gap-1.5 text-sm hover:text-primary">
-            <LayoutDashboard className="h-4 w-4" /> Dashboard
-          </Link>
-          <Link to="/admin/orders" className="flex items-center gap-1.5 text-sm hover:text-primary">
+          <Link
+            to="/admin/orders"
+            className="flex items-center gap-1.5 text-sm font-medium hover:text-primary [&.active]:text-primary [&.active]:font-semibold"
+          >
             <ClipboardList className="h-4 w-4" /> Orders
           </Link>
-          <Link to="/admin/inventory" className="flex items-center gap-1.5 text-sm hover:text-primary">
+          <Link
+            to="/admin/inventory"
+            className="flex items-center gap-1.5 text-sm font-medium hover:text-primary [&.active]:text-primary [&.active]:font-semibold"
+          >
             <Boxes className="h-4 w-4" /> Inventory
           </Link>
         </nav>

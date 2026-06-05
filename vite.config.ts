@@ -12,4 +12,9 @@ export default defineConfig({
     // nitro/vite builds from this
     server: { entry: "server" },
   },
+  // Use the Vercel preset so nitro generates .vercel/output/ during `npm run build`.
+  // Vercel automatically detects this directory via the Build Output API v3.
+  nitro: {
+    preset: "vercel",
+  },
 });
