@@ -1,0 +1,113 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Warm & Appetizing palette */
+  --background: oklch(0.978 0.018 85);        /* cream #fef6e4 */
+  --foreground: oklch(0.22 0.04 40);          /* espresso #2c1810 */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.22 0.04 40);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.22 0.04 40);
+
+  --primary: oklch(0.55 0.21 27);             /* tomato #c0392b */
+  --primary-foreground: oklch(0.98 0.01 85);
+
+  --secondary: oklch(0.78 0.14 70);           /* amber #f3a847 */
+  --secondary-foreground: oklch(0.22 0.04 40);
+
+  --muted: oklch(0.94 0.02 80);
+  --muted-foreground: oklch(0.45 0.04 50);
+
+  --accent: oklch(0.78 0.14 70);
+  --accent-foreground: oklch(0.22 0.04 40);
+
+  --destructive: oklch(0.55 0.21 27);
+  --destructive-foreground: oklch(0.98 0.01 85);
+
+  --border: oklch(0.88 0.03 70);
+  --input: oklch(0.92 0.02 75);
+  --ring: oklch(0.55 0.21 27);
+
+  --chart-1: oklch(0.55 0.21 27);
+  --chart-2: oklch(0.78 0.14 70);
+  --chart-3: oklch(0.45 0.12 140);
+  --chart-4: oklch(0.4 0.08 40);
+  --chart-5: oklch(0.65 0.18 50);
+
+  --sidebar: oklch(0.98 0.018 85);
+  --sidebar-foreground: oklch(0.22 0.04 40);
+  --sidebar-primary: oklch(0.55 0.21 27);
+  --sidebar-primary-foreground: oklch(0.98 0.01 85);
+  --sidebar-accent: oklch(0.92 0.04 75);
+  --sidebar-accent-foreground: oklch(0.22 0.04 40);
+  --sidebar-border: oklch(0.88 0.03 70);
+  --sidebar-ring: oklch(0.55 0.21 27);
+}
+
+@layer base {
+  * { border-color: var(--color-border); }
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+  }
+  h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: -0.02em; }
+}
+
+/* Pizza-themed animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-6deg); }
+  50% { transform: translateY(-20px) rotate(6deg); }
+}
+@keyframes spin-slow {
+  to { transform: rotate(360deg); }
+}
+@keyframes steam {
+  0% { transform: translateY(0) scale(1); opacity: 0.6; }
+  100% { transform: translateY(-40px) scale(1.4); opacity: 0; }
+}
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-spin-slow { animation: spin-slow 14s linear infinite; }
+.animate-steam { animation: steam 2.4s ease-out infinite; }
+
+.hover-scale { transition: transform 0.2s ease; }
+.hover-scale:hover { transform: scale(1.03); }
