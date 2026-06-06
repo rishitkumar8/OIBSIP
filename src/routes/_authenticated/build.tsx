@@ -139,7 +139,7 @@ function Build() {
                   onClick={() => setStep(step + 1)}
                 >Next</Button>
               ) : (
-                <Button onClick={addToCart} className="shadow-lg">Add to cart — ${total.toFixed(2)}</Button>
+                <Button onClick={addToCart} className="shadow-lg">Add to cart — ₹{total.toFixed(2)}</Button>
               )}
             </div>
           </div>
@@ -158,7 +158,7 @@ function Build() {
                   <Line label="Build fee" value="—" price={5} />
                 </ul>
                 <div className="mt-4 flex justify-between border-t pt-3 font-semibold">
-                  <span>Total</span><span className="text-primary">${total.toFixed(2)}</span>
+                  <span>Total</span><span className="text-primary">₹{total.toFixed(2)}</span>
                 </div>
               </CardContent>
             </Card>
@@ -173,7 +173,7 @@ function Line({ label, value, price }: { label: string; value?: string; price?: 
   return (
     <li className="flex justify-between text-sm">
       <span className="text-muted-foreground">{label}: {value ?? "—"}</span>
-      <span>{price ? `$${Number(price).toFixed(2)}` : ""}</span>
+      <span>{price ? `₹${Number(price).toFixed(2)}` : ""}</span>
     </li>
   );
 }
@@ -205,7 +205,7 @@ function Section({ title, items, selected, onPick, multi, lowFn }: {
                 {low && !sel && <AlertTriangle className="h-4 w-4 text-muted-foreground" />}
               </div>
               <div className="mt-1 text-sm text-muted-foreground">
-                +${Number(i.price).toFixed(2)}
+                +₹{Number(i.price).toFixed(2)}
                 {low && <span className="ml-2 text-xs text-destructive">Out of stock</span>}
               </div>
             </button>

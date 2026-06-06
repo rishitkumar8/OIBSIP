@@ -47,41 +47,41 @@ function Dashboard() {
             const image = getPizzaImage(p.name, p.image_url);
 
             return (
-            <Card key={p.id} className="overflow-hidden">
-              <div className="relative h-44 overflow-hidden bg-muted">
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="h-full w-full object-cover transition duration-500 hover:scale-105"
-                  loading="lazy"
-                />
-              </div>
-              <CardContent className="p-5">
-                <h3 className="font-display text-xl">{p.name}</h3>
-                <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{p.description}</p>
-                <div className="mt-4 flex items-center justify-between">
-                  <span className="font-semibold text-primary">${Number(p.base_price).toFixed(2)}</span>
-                  <Button
-                    size="sm"
-                    onClick={() => {
-                      cart.add({
-                        pizza_name: p.name,
-                        base_id: null,
-                        sauce_id: null,
-                        cheese_id: null,
-                        veggie_ids: [],
-                        meat_ids: [],
-                        quantity: 1,
-                        price: Number(p.base_price),
-                      });
-                      toast.success(`${p.name} added to cart`);
-                    }}
-                  >
-                    <Plus className="mr-1 h-4 w-4" /> Add
-                  </Button>
+              <Card key={p.id} className="overflow-hidden">
+                <div className="relative h-44 overflow-hidden bg-muted">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="h-full w-full object-cover transition duration-500 hover:scale-105"
+                    loading="lazy"
+                  />
                 </div>
-              </CardContent>
-            </Card>
+                <CardContent className="p-5">
+                  <h3 className="font-display text-xl">{p.name}</h3>
+                  <p className="mt-1 line-clamp-2 text-sm text-muted-foreground">{p.description}</p>
+                  <div className="mt-4 flex items-center justify-between">
+                    <span className="font-semibold text-primary">₹{Number(p.base_price).toFixed(2)}</span>
+                    <Button
+                      size="sm"
+                      onClick={() => {
+                        cart.add({
+                          pizza_name: p.name,
+                          base_id: null,
+                          sauce_id: null,
+                          cheese_id: null,
+                          veggie_ids: [],
+                          meat_ids: [],
+                          quantity: 1,
+                          price: Number(p.base_price),
+                        });
+                        toast.success(`${p.name} added to cart`);
+                      }}
+                    >
+                      <Plus className="mr-1 h-4 w-4" /> Add
+                    </Button>
+                  </div>
+                </CardContent>
+              </Card>
             );
           })}
         </div>
