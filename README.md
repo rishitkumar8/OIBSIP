@@ -2,7 +2,7 @@
 
 > Full-stack pizza ordering app with custom pizza builder, Razorpay payments, real-time order tracking, and a complete admin inventory & order management system.
 
-**Live Demo:** [Deployed on Vercel](https://oib-metuku-rishit-kumar-level-3-task.vercel.app)
+**Live Demo:** [Deployed on Vercel](https://pizzaferno.vercel.app)
 
 ---
 
