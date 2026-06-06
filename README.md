@@ -1,5 +1,4 @@
 ## OIB Web Development Internship - Level 3 Task
-
 # Pizza Delivery Application
 
 > Full-stack pizza ordering app with custom pizza builder, Razorpay payments, real-time order tracking, and a complete admin inventory & order management system.
